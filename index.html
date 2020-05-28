@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&display=swap" rel="stylesheet">
+  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  <span class="clear btn" id="clear">Clear All <ion-icon class="icon" name="trash-outline"></ion-icon></span>
+  <div class="wrapper">
+      <h1 style="align-self: center;">Expense Tracker</h1>
+      <div class="balance">
+          <h2>Your balance</h2>
+          <h1 id="balance"></h1>
+      </div>
+      <div class="money-box">
+          <div class="income-box">
+              <h2>Income</h2>
+              <h2 class="income" id="income"></h2>
+          </div>
+          <div class="expense-box">
+              <h2>Expense</h2>
+              <h2 class="expense" id="expense"></h2>
+          </div>
+      </div>
+      <div class="history">
+          <h2>History</h2>
+      </div>
+      <div class="transaction-list" id="transaction-list">
+        <!-- <div class="transaction-item"> -->
+            <!-- <p class="transaction-name" id="transaction-name">Test</p> -->
+            <!-- <p class="transaction-amount" id="transaction-amount">20</p> -->
+        <!-- </div> -->
+      </div>
+      <h2 style="border-bottom: 1px solid #333">Add new transaction</h2>
+      <div class="transactions">
+          <label for="text">Text</label>
+          <input class="text-input" id="text-input" type="text" placeholder="Enter text...">
+          <label for="amount">Amount</label>
+          <input class="amount-input" id="amount-input" type="number" placeholder="Enter amount...">
+      </div>
+      <button id="add-btn" class="btn">Add Transaction</button>
+  </div>
+
+  <script src="script.js" ></script>
+</body>
+</html>

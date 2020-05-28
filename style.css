@@ -1,0 +1,130 @@
+
+:root {
+  font-size: 75%;
+}
+
+* {
+  box-sizing: border-box;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+body {
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.clear {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+input {
+  padding: .5rem 1rem;
+  margin-top: .4rem;
+  margin-bottom: .4rem;
+}
+
+.wrapper {
+  margin-top: 3rem;
+  width: 40%;
+  display: flex;
+  -ms-align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.money-box {
+  width: 100%;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 0 0 .5rem rgba(20, 20, 20, .2);
+  padding: 1rem;
+}
+
+.wrapper > * {
+  margin: 1.5rem 0;
+}
+
+.transactions {
+  width: 100%;
+  display: flex;
+  -ms-align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -.5rem;
+}
+
+.history {
+  width: 100%;
+}
+
+.history h2 {
+  border-bottom: 1px solid #333;
+}
+
+.balance, .history {
+  align-self: flex-start;
+}
+
+.btn {
+  padding: .5rem 1rem;
+  background-color: #9C88FF;
+  color: #eee;
+  border: none;
+  margin-top: -1rem;
+}
+
+.btn-delete {
+  position: absolute;
+  padding: .5rem 1rem;
+  background-color: #9C88FF;
+  color: #eee;
+  border: none;
+  right: -25%;
+  cursor: pointer;
+}
+
+
+.transaction-list {
+  width: 100%;
+}
+
+.transaction-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.income-item {
+  border: 1px solid #4caf50;
+}
+
+.expense-item {
+  border: 1px solid #ef6571;
+}
+
+
+
+
+
+
+
+
+
+

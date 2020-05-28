@@ -1,0 +1,1 @@
+- Change data type for input tag to number and not text
