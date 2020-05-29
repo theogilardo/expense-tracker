@@ -5,6 +5,7 @@ const income = document.getElementById('income');
 const expense = document.getElementById('expense');
 const listContainer = document.getElementById('list');
 const addBtn = document.getElementById('add-btn');
+const clearBtn = document.getElementById('clear-btn');
 
 // Popup
 const textUpdate = document.getElementById('text-update');
@@ -12,11 +13,6 @@ const amountUpdate = document.getElementById('amount-update');
 const btnGoBack = document.getElementById('btn-go-back');
 const editPopupBtn = document.getElementById('edit-popup-btn');
 const popup = document.getElementById('popup');
-
-
-// Add percentage
-// Add update
-// Add more design + animations
 
 // let transactions = [
 //   { text: 'cereal', amount: 400, id: 30 },
@@ -31,24 +27,12 @@ function init() {
   clearDataSet();
   updateValues();
   transactionsDOM(transactions);
-
 }
 
 init();
 
 function transactionsDOM(transactions) {
   transactions.forEach(transaction => addToDOM(transaction));
-}
-
-function clearDataSet() {
-  localStorage.clear();
-  localStorage.setItem('transactions', JSON.stringify(transactions));
-}
-
-function clearDOM() {
-  listContainer.innerHTML = '';
-  text.innerHTML = '';
-  amount.innerHTML = '';
 }
 
 function getData() {
@@ -62,28 +46,34 @@ function getRandomId() {
 
 function addTransaction(e) {
 
-e.preventDefault();
-// Create the instance
-  const transaction = {
-    text: text.value,
-    amount: parseInt(amount.value),
-    id: getRandomId()
-  };
+  e.preventDefault();
 
-// Push the instance to the transactions array
-  transactions.push(transaction)
+    if (text.value.trim() === '' || amount.value.trim() === '') {
+        alert('Please enter a valid value') } else {
 
-// Add the transaction to the DOM
-addToDOM(transaction);
-// Update the values on top for total/inc/exp
-updateValues();
-// Save to local storage
-localStorage.setItem('transactions', JSON.stringify(transactions));
-// Reset input
-text.innerHTML = '';
-amount.innerHTML = '';
+        // Create the instance
+        const transaction = {
+          text: text.value,
+          amount: parseInt(amount.value),
+          id: getRandomId()
+        };
 
-}
+        // Push the instance to the transactions array
+          transactions.push(transaction)
+
+        // Add the transaction to the DOM
+        addToDOM(transaction);
+        // Update the values on top for total/inc/exp
+        updateValues();
+        // Save to local storage
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+        // Reset input
+        text.innerHTML = '';
+        amount.innerHTML = '';
+
+        clearBtn.classList.remove('hidden');
+    };
+};
 
 function updateValues() {
 
@@ -107,7 +97,6 @@ function updateValues() {
   balance.innerHTML = `$${total}`
   income.innerHTML = `$${inc}`
   expense.innerHTML = `$${exp}`
-
 };
 
 function addToDOM(transaction) {
@@ -132,7 +121,6 @@ function addToDOM(transaction) {
 };
 
 function removeTransaction(id) {
-
   // Remove it from transactions with filter function for ID
   transactions = transactions.filter(transaction => transaction.id !== id)
   // Refresh data + DOM with init
@@ -141,9 +129,7 @@ function removeTransaction(id) {
 
 
 // POPUP
-
 function addPopup(id){
-
   // Make popup appear
   popup.classList.toggle('hidden');
   popup.setAttribute("data-id", `${id}`)
@@ -156,11 +142,9 @@ function addPopup(id){
   textUpdate.focus();
   // textUpdate.value = transaction.text;
   amountUpdate.value = `${transaction[0].amount}`;
-
   };
 
 function editTransaction(e){
-
   // Retrieve ID from DOM
   const retrieveID = parseInt(popup.dataset.id);
 
@@ -178,20 +162,36 @@ function findTransaction(id){
 };
 
 
+// Clear Data
+function clearAll(){
+
+  localStorage.clear();
+  clearDOM();
+  updateValues();
+  location.reload();
+
+  balance.innerHTML = `$0.00`
+  income.innerHTML = `$0.00`
+  expense.innerHTML = `$0.00`
+};
+
+function clearDataSet() {
+  localStorage.clear();
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+}
+
+function clearDOM() {
+  listContainer.innerHTML = '';
+  text.innerHTML = '';
+  amount.innerHTML = '';
+}
+
+
 // Event Listeners
-
+clearBtn.addEventListener('click', clearAll);
 addBtn.addEventListener('click', addTransaction);
-editPopupBtn.addEventListener('click', editTransaction)
+editPopupBtn.addEventListener('click', editTransaction);
 btnGoBack.addEventListener('click', () => popup.classList.toggle('hidden'));
-
-
-
-
-
-
-
-
-
 
 
 

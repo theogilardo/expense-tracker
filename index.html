@@ -11,23 +11,25 @@
 <body>
   <div class="wrapper">
     <h1>Expense Tracker</h1>
-    <h2>Balance</h2>
-    <div id="balance">$0</div>
+    <h2 class="header-balance">Balance</h2>
+    <p class="header-amount" id="balance">$0</p>
     <div class="container-inc-exp">
         <div>
             <h2>Income</h2>
-            <div id="income">$0</div>
+            <p id="income">$0</p>
         </div>
         <div>
             <h2>Expense</h2>
-            <div id="expense">$0</div>
+            <p id="expense">$0</p>
         </div>
     </div>
     <h3>Historic</h3>
     <ul id="list" class="list">
 
     </ul>
-
+    <div class="clear-container">
+        <button class="btn-clear hidden" id="clear-btn">Clear All</button>
+    </div>
     <h3>Add New Transaction</h3>
     <form>
         <div>
@@ -58,7 +60,6 @@
         <button id="btn-go-back" class="btn-go-back">x</button>
       </div>
   </div>
-
   <script src="script.js" ></script>
 </body>
 </html>

@@ -24,6 +24,10 @@ body {
   min-height: 100vh;
 }
 
+p {
+  font-size: 1.5rem;
+}
+
 h1 {
     font-family: 'Permanent Marker', cursive;
     background-image: linear-gradient(to right bottom, #79F1A4, #0E5CAD);
@@ -44,7 +48,20 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 1.5rem 4rem;
+  padding: 3rem 4rem;
+  border-radius: 10px;
+  box-shadow: 0 1rem 1.5rem rgba(0,0,0,.2);
+  position: relative;
+  z-index: 50;
+}
+
+.header-balance {
+  font-size: 2.8rem;
+  margin-bottom: -.5rem;
+}
+
+.header-amount {
+  font-size: 2rem;
 }
 
 .container-inc-exp {
@@ -56,13 +73,21 @@ h1 {
 }
 
 .container-inc-exp div {
-  padding: 1rem;
   text-align: center;
   background-color: white;
-  border-radius: 4px;
-  padding: .5rem 1rem;
+  padding: .5rem 2rem;
   margin-top: 1rem;
+  border-top: 4px solid #0E5CAD59;
+  border-bottom: 4px solid #0E5CAD59;
 }
+
+.container-inc-exp div:nth-child(1) {
+  border-left: 4px solid #0E5CAD59;
+}
+.container-inc-exp div:nth-child(2) {
+  border-right: 4px solid #0E5CAD59;
+}
+
 
 form {
   width: 100%;
@@ -80,6 +105,9 @@ form > div {
 input {
   padding: .5rem;
   margin-top: .5rem;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 h3 {
@@ -92,7 +120,7 @@ h3 {
   width: 100%;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -128,13 +156,13 @@ h3 {
 
 .btn-delete {
   position: absolute;
-  transform: translateX(-240%);
+  transform: translateX(-200%);
   background-color: #333;
   cursor: pointer;
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: .2rem .5rem;
+  border-radius: 10px;
+  padding: .4rem .8rem;
   opacity: 0;
   transition: opacity .4s;
 }
@@ -154,7 +182,6 @@ h3 {
   cursor: pointer;
   font-size: 1.4rem;
   letter-spacing: 2px;
-
 }
 
 .btn-delete:focus,
@@ -188,7 +215,7 @@ h3 {
   width: 100%;
   height: 100%;
   background-color: grey;
-  opacity: .8;
+  opacity: .95;
 }
 
 .update-container {
@@ -200,7 +227,7 @@ h3 {
   z-index: 10;
   width: 60%;
   height: 35%;
-  border-radius: 4px;
+  border-radius: 10px;
   position: relative;
 }
 
@@ -220,9 +247,30 @@ h3 {
   display: none;
 }
 
+.btn-clear {
+  position: absolute;
+  padding: .8rem 1rem;
+  border-radius: 10px;
+  background-color: #333;
+  /*background-image: linear-gradient(to left top, #79F1A4, #0E5CAD);*/
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
 
-
-
+.clear-container {
+  margin: 1rem;
+  width: 100%;
+  height: 2rem ;
+  text-align: center;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
