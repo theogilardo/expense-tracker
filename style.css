@@ -1,14 +1,13 @@
 
 :root {
-  font-size: 75%;
+  /*Add customer variables here*/
+  font-size: 90%;
 }
 
 * {
   box-sizing: border-box;
-  /*font-family: Arial, Helvetica, sans-serif;*/
-  margin: 0;
-  padding: 0;
-  color: #333;
+ /* margin: 0;
+  padding: 0;*/
 }
 
 body {
@@ -16,108 +15,214 @@ body {
   -ms-align-items: center;
   align-items: center;
   justify-content: center;
-  background-color: #eee;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  padding: 5rem 0;
+  background-image: linear-gradient(to right bottom, #79F1A4, #0E5CAD);
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
-.clear {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  cursor: pointer;
-}
-
-input {
-  padding: .5rem 1rem;
-  margin-top: .4rem;
-  margin-bottom: .4rem;
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    background-image: linear-gradient(to right bottom, #79F1A4, #0E5CAD);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    font-size: 4rem;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
 }
 
 .wrapper {
-  margin-top: 3rem;
-  width: 40%;
+  width: 100%;
   display: flex;
+  background-color: #eee;
   -ms-align-items: center;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 1.5rem 4rem;
 }
 
-.money-box {
+.container-inc-exp {
   width: 100%;
   display: flex;
   -ms-align-items: center;
   align-items: center;
-  justify-content: space-around;
-  background-color: white;
-  box-shadow: 0 0 .5rem rgba(20, 20, 20, .2);
-  padding: 1rem;
-}
-
-.wrapper > * {
-  margin: 1.5rem 0;
-}
-
-.transactions {
-  width: 100%;
-  display: flex;
-  -ms-align-items: center;
   justify-content: center;
-  flex-direction: column;
-  margin-top: -.5rem;
 }
 
-.history {
+.container-inc-exp div {
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  margin-top: 1rem;
+}
+
+form {
   width: 100%;
 }
 
-.history h2 {
-  border-bottom: 1px solid #333;
+form > * {
+  margin: 1rem 0;
 }
 
-.balance, .history {
-  align-self: flex-start;
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: .5rem;
+  margin-top: .5rem;
+}
+
+h3 {
+  border-bottom: 1px solid #333;
+  padding-bottom: .5rem;
+  width: 100%;
 }
 
 .btn {
-  padding: .5rem 1rem;
-  background-color: #9C88FF;
-  color: #eee;
+  width: 100%;
+  padding: 1rem 2rem;
   border: none;
-  margin-top: -1rem;
-}
-
-.btn-delete {
-  position: absolute;
-  padding: .5rem 1rem;
-  background-color: #9C88FF;
-  color: #eee;
-  border: none;
-  right: -25%;
+  border-radius: 4px;
   cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  /*background-color: #9c88ff;*/
+  background-image: linear-gradient(to left top, #79F1A4, #0E5CAD);
+  color: white;
+  transition: all .5s ease-in;
 }
 
-
-.transaction-list {
-  width: 100%;
+.btn:hover {
+  transform: translateY(-.25rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
-.transaction-item {
-  position: relative;
+.list {
   width: 100%;
+  padding: 0;
+}
+
+.list div {
+  width: 100%;
+  padding: 0 1rem;
+  list-style: none;
   display: flex;
   -ms-align-items: center;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
   margin-bottom: 1rem;
+  position: relative;
+  transition: opacity .4s;
 }
 
-.income-item {
-  border: 1px solid #4caf50;
+.btn-delete {
+  position: absolute;
+  transform: translateX(-240%);
+  background-color: #333;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: .2rem .5rem;
+  opacity: 0;
+  transition: opacity .4s;
 }
 
-.expense-item {
-  border: 1px solid #ef6571;
+.btn-edit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  border: none;
+  opacity: 0;
+  transition: opacity .4s;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+
 }
+
+.btn-delete:focus,
+.btn-delete:active {
+  outline: 0;
+}
+
+.list div:hover .btn-delete {
+  opacity: 1;
+}
+
+.list div:hover .btn-edit {
+  opacity: 1;
+}
+
+.inc {
+  border: 3px solid #4caf50;
+}
+
+.exp {
+  border: 3px solid #ef6571;
+}
+
+
+/* POPUP */
+
+.update-full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  opacity: .8;
+}
+
+.update-container {
+  background-color: #333;
+  padding: 4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 60%;
+  height: 35%;
+  border-radius: 4px;
+  position: relative;
+}
+
+.btn-go-back {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  font-size: 1.5rem;
+  border: none;
+  color: white;
+  padding: .2rem .5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
 
 
 
