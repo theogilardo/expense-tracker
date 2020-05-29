@@ -1,7 +1,7 @@
 
 :root {
   /*Add customer variables here*/
-  font-size: 75%;
+  font-size: 80%;
 }
 
 * {
@@ -16,7 +16,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
   padding: 5rem 0;
   background-image: linear-gradient(to right bottom, #79F1A4, #0E5CAD);
@@ -101,6 +101,10 @@ form > div {
   flex-direction: column;
 }
 
+label {
+  font-size: 1.4rem;
+}
+
 input {
   padding: .5rem;
   margin-top: .5rem;
@@ -113,6 +117,7 @@ h3 {
   border-bottom: 1px solid #333;
   padding-bottom: .5rem;
   width: 100%;
+  font-size: 1.5rem;
 }
 
 .btn {
@@ -247,11 +252,9 @@ h3 {
 }
 
 .btn-clear {
-  position: absolute;
   padding: .8rem 1rem;
   border-radius: 10px;
   background-color: #333;
-  /*background-image: linear-gradient(to left top, #79F1A4, #0E5CAD);*/
   color: white;
   border: none;
   text-transform: uppercase;
@@ -260,15 +263,18 @@ h3 {
   letter-spacing: 2px;
 }
 
-.clear-container {
-  margin: 1rem;
+.flex {
   width: 100%;
-  height: 2rem ;
-  text-align: center;
+  padding: 1rem 0;
   display: flex;
   -ms-align-items: center;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.flex h3 {
+  border: none;
+  font-size: 2rem;
 }
 
 

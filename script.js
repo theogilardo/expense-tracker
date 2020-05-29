@@ -24,9 +24,10 @@ let transactions = getData()
 
 function init() {
   clearDOM();
-  clearDataSet();
+  refreshDataSet();
   updateValues();
   transactionsDOM(transactions);
+
 }
 
 init();
@@ -71,7 +72,6 @@ function addTransaction(e) {
         text.innerHTML = '';
         amount.innerHTML = '';
 
-        clearBtn.classList.remove('hidden');
     };
 };
 
@@ -129,9 +129,10 @@ function removeTransaction(id) {
 
 
 // POPUP
+
 function addPopup(id){
   // Make popup appear
-  popup.classList.toggle('hidden');
+  popup.classList.remove('hidden');
   popup.setAttribute("data-id", `${id}`)
 
   // Select transaction from dataset
@@ -145,6 +146,7 @@ function addPopup(id){
   };
 
 function editTransaction(e){
+
   // Retrieve ID from DOM
   const retrieveID = parseInt(popup.dataset.id);
 
@@ -154,13 +156,11 @@ function editTransaction(e){
 
   // Refresh Data Set
   init();
-
 };
 
 function findTransaction(id){
   return transactions.filter(transaction => transaction.id === id)
 };
-
 
 // Clear Data
 function clearAll(){
@@ -175,7 +175,7 @@ function clearAll(){
   expense.innerHTML = `$0.00`
 };
 
-function clearDataSet() {
+function refreshDataSet() {
   localStorage.clear();
   localStorage.setItem('transactions', JSON.stringify(transactions));
 }
