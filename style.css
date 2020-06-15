@@ -1,7 +1,12 @@
 
-:root {
-  /*Add customer variables here*/
+html {
   font-size: 50%;
+}
+
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 34%;
+  }
 }
 
 * {
@@ -16,7 +21,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 40%;
+  width: 100%;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 5rem 0;
   background-image: linear-gradient(to right bottom, #79F1A4, #0E5CAD);
@@ -111,6 +117,7 @@ input {
   border: none;
   border-radius: 10px;
   padding: 1rem;
+  font-size: 1.4rem;
 }
 
 h3 {
