@@ -3,11 +3,13 @@ html {
   font-size: 50%;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 450px) {
   html {
-    font-size: 15%;
+    font-size: 30%;
   }
 }
+
+
 
 * {
   box-sizing: border-box;
