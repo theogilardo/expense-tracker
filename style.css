@@ -3,14 +3,6 @@ html {
   font-size: 50%;
 }
 
-@media screen and (max-width: 450px) {
-  html {
-    font-size: 20%;
-  }
-}
-
-
-
 * {
   box-sizing: border-box;
  /* margin: 0;
@@ -287,9 +279,11 @@ h3 {
 }
 
 
-
-
-
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 40%;
+  }
+}
 
 
 
